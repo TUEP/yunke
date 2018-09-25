@@ -1,0 +1,291 @@
+{extend name="public:base" /}
+
+{block name="style"}
+<style type="text/css" rel="stylesheet">
+
+</style>
+{/block}
+
+{block name="container"}
+<div class="banner">
+    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <a key="0" href="" target="_blank">
+                    <img src="__IMG__/home/public-20180104-FjUdE-2AwpzRnDU9KDtReMbI1J9F.jpg"/>
+                </a>
+            </div>
+            <div class="item">
+                <a key="1" href="" target="_blank">
+                    <img src="__IMG__/home/public-20180512-FvwHCMlfSpKlkJKneytbjzpNeyJW.jpg"/>
+                </a>
+            </div>
+            <div class="item">
+                <a key="2" href="" target="_blank">
+                    <img src="__IMG__/home/public-20180706-FhBgEbIcNqZ5hr3U7sJO3iEbswMi.jpg"/>
+                </a>
+            </div>
+            <div class="item">
+                <a key="3" href="" target="_blank">
+                    <img src="__IMG__/home/public-20180712-FrzKTafF2DnbbQesRlJTbfxd1QFy.jpg"/>
+                </a>
+            </div>
+            <div class="item">
+                <a key="4" href="" target="_blank">
+                    <img src="__IMG__/home/public-20180718-FoZrtpWeyzPrJBGDKNIj0l76DEX4.jpg"/>
+                </a>
+            </div>
+            <div class="item">
+                <a key="5" href="" target="_blank">
+                    <img src="__IMG__/home/public-20180817-FhppZ5b0JYdF_XmwKLbXZ3IS-9Lv.jpg"/>
+                </a>
+            </div>
+        </div>
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev"></a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next"></a>
+    </div>
+    <div class="search">
+        <div class="search-box">
+            <div class="search-select">
+                <span>全部</span>
+                <div class="search-select-list" tabindex="0">
+                    <label>全部</label>
+                    <label>整租</label>
+                    <label>合租</label>
+                </div>
+            </div>
+            <input class="search-box" type="text" placeholder="例如: 回龙观、双井、天通苑、青年路、望京等" autocomplete="off">
+            <div class="search-btn">搜索</div>
+
+        </div>
+        <a href="https://www.dankegongyu.com/map/bj?from=pc_home" target="_blank" class="search-map-btn">地图找房</a>
+        <div class="searcht-text">
+            <label>热门搜索：</label>
+            <!-- <a href="https://www.dankegongyu.com/room/bj/x%E7%8E%B0%E6%88%BF.html">现房</a>
+            <a href="https://www.dankegongyu.com/room/bj/n1.html?from=hot_keywords">一居室</a>
+            <a href="https://www.dankegongyu.com/room/bj?from=hot_keywords&search_text=%E5%9B%9E%E9%BE%99%E8%A7%82">回龙观</a>
+            <a href="https://www.dankegongyu.com/room/bj?from=hot_keywords&search_text=%E5%8F%8C%E4%BA%95">双井</a>
+            <a href="https://www.dankegongyu.com/room/bj?from=hot_keywords&search_text=%E5%A4%A9%E9%80%9A%E8%8B%91">天通苑</a>
+            <a href="https://www.dankegongyu.com/room/bj?from=hot_keywords&search_text=%E9%9D%92%E5%B9%B4%E8%B7%AF">青年路</a>
+            <a href="https://www.dankegongyu.com/room/bj?from=hot_keywords&search_text=%E6%9C%9B%E4%BA%AC">望京</a>
+            <a href="https://www.dankegongyu.com/room/bj">所有房源</a> -->
+        </div>
+    </div>
+    <div class="searchbg"></div>
+</div>
+
+<div class="index-box">
+    <div class="wibsite-center">
+        <div class="box-title">
+            <div class="box-title-fl fl">
+                <h1>
+                    <span><b>精选房源</b>为你而选</span>
+                    <p>蛋壳公寓致力于为都市白领创造高品质租住生活</p>
+                </h1>
+            </div>
+            <div class="box-title-fr fr">
+                <a key="0" href="https://www.dankegongyu.com/room/bj">更多</a>
+            </div>
+        </div>
+        <div class="index-rooms">
+
+        </div>
+    </div>
+</div>
+
+<div class="index-sq">
+    <div class="wibsite-center">
+
+        <div class="box-title">
+            <div class="box-title-fl fl J-joint-tit">
+                <h2>
+                    <span><b>合租·样板间</b>多种风格</span>
+                    <p>高档家居 高品质合租公寓，为都市白领创造高品质租住生活</p>
+                </h2>
+            </div>
+            <div class="box-title-fr fr J-title-2">
+                <label is-muji="1" is-gyf="1" class="on already">房间</label>
+                <label is-muji="1" is-gyf="1" >客厅</label>
+                <label is-muji="1" is-gyf="1" >卫生间</label>
+                <label is-muji="1" is-gyf="1" >厨房</label>
+            </div>
+        </div>
+
+        <div class="sample-box J-sample-2">
+            <div class="sample block">
+                <div id="sampleHe0" class="sample-slide carousel slide" data-interval="false" data-ride="carousel">
+                    <ul class="sample-list carousel-inner">
+                        <li class="item active">
+                            <a href="/recommend-list/bj?rent_type=joint_rent">
+                                <img  title="MUJI风样板间图片" src="__IMG__/home/public-20180329-Fi8y12a19ESuM_4rFBtv7xto1XAF.jpg" alt="MUJI风样板间图片" style="display: block;">
+                            </a>
+                            <p class="sample-name">每次进入房屋，淡蓝色的墙面，给你梦幻的世界
+                                <a class="inList" href="/room/bj/zMUJI风-c合租.html">查看房源</a>
+                            </p>
+                        </li>
+                        <li class="item">
+                            <a href="/recommend-list/bj?rent_type=joint_rent">
+                                <img  title="工业风样板间图片" src="__IMG__/home/public-20180329-Fo7SUtrkV4mzTfp9IpygZWkrtm-L.jpg" alt="工业风样板间图片" style="display: block;">
+                            </a>
+                            <p class="sample-name">铁架上下铺，照片框工业风十足
+                                <a class="inList" href="/room/bj/z工业风-c合租.html">查看房源</a>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="sample-btn sample-prev " href="#sampleHe0" data-slide="prev"></div>
+                    <div class="sample-btn sample-next " href="#sampleHe0" data-slide="next"></div>
+                </div>
+                <div class="sample-si">
+                    <div class="si no-bg" data-idx="1" data-toggle="modal" data-target="#picture-modal">
+                        <img class="m1 on" title="租房，整租，合租"  src="__IMG__/home/public-20180329-FhNHjTODhCrjN2rjUMm2Q1Cltu4m.jpg" style="display: inline;">
+                        <img class="g1" title="租房，整租，合租"  src="__IMG__/home/public-20180329-Fr_Hm0PcDlWdGY24bSKuFlXYyxLS.jpg" style="display: none;">
+                    </div>
+                    <div class="si no-bg" data-idx="2" data-toggle="modal" data-target="#picture-modal">
+                        <img class="m1 on" title="租房，整租，合租" src="__IMG__/home/public-20180329-FrNsOKzIZWWtKJGPtGzZ0A4g8zE_.jpg" style="display: inline;">
+                        <img class="g1" title="租房，整租，合租" src="__IMG__/home/public-20180329-Fo25P0K-Ncz1pAOJZSI8nEPg3XqU.jpg" style="display: none;">
+                    </div>
+                    <div class="si no-bg" data-idx="3" data-toggle="modal" data-target="#picture-modal">
+                        <img class="m1 on" title="租房，整租，合租" src="__IMG__/home/public-20180329-FheQabPfVZyAwEHhGlC2VaWADEtc.jpg" style="display: inline;">
+                        <img class="g1" title="租房，整租，合租" src="__IMG__/home/public-20180329-FvuQexlEhZxtHW3cuNXJJJgHliC2.jpg" style="display: none;">
+                    </div>
+                </div>
+            </div>
+            <div class="sample"></div>
+            <div class="sample"></div>
+            <div class="sample"></div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="index-sq">
+    <div class="wibsite-center">
+        <div class="box-title">
+            <div class="box-title-fl fl J-entire-tit">
+                <h2>
+                    <span><b>整租·样板间</b>多种风格</span>
+                    <p>高档家居 高品质合租公寓，为都市白领创造高品质租住生活</p>
+                </h2>
+            </div>
+            <div class="box-title-fr fr J-title-1">
+                <label is-muji="1" is-gyf="1" class="on already">房间</label>
+                <label is-muji="1" is-gyf="1" >客厅</label>
+                <label is-muji="1" is-gyf="1" >卫生间</label>
+                <label is-muji="1" is-gyf="1" >厨房</label>
+            </div>
+        </div>
+
+        <div class="sample-box J-sample-1">
+            <div class="sample block">
+                <div id="sampleHe1" class="sample-slide carousel slide" data-interval="false" data-ride="carousel">
+                    <ul class="sample-list carousel-inner">
+                        <li class="item active">
+                            <a href="/recommend-list/bj?rent_type=joint_rent">
+                                <img  title="MUJI风样板间图片" src="__IMG__/home/public-20180329-Fi8y12a19ESuM_4rFBtv7xto1XAF.jpg" alt="MUJI风样板间图片" style="display: block;">
+                            </a>
+                            <p class="sample-name">每次进入房屋，淡蓝色的墙面，给你梦幻的世界
+                                <a class="inList" href="/room/bj/zMUJI风-c合租.html">查看房源</a>
+                            </p>
+                        </li>
+                        <li class="item">
+                            <a href="/recommend-list/bj?rent_type=joint_rent">
+                                <img  title="工业风样板间图片" src="__IMG__/home/public-20180329-Fo7SUtrkV4mzTfp9IpygZWkrtm-L.jpg" alt="工业风样板间图片" style="display: block;">
+                            </a>
+                            <p class="sample-name">铁架上下铺，照片框工业风十足
+                                <a class="inList" href="/room/bj/z工业风-c合租.html">查看房源</a>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="sample-btn sample-prev " href="#sampleHe0" data-slide="prev"></div>
+                    <div class="sample-btn sample-next " href="#sampleHe0" data-slide="next"></div>
+                </div>
+                <div class="sample-si">
+                    <div class="si no-bg" data-idx="1" data-toggle="modal" data-target="#picture-modal">
+                        <img class="m1 on" title="租房，整租，合租"  src="__IMG__/home/public-20180329-FhNHjTODhCrjN2rjUMm2Q1Cltu4m.jpg" style="display: inline;">
+                        <img class="g1" title="租房，整租，合租"  src="__IMG__/home/public-20180329-Fr_Hm0PcDlWdGY24bSKuFlXYyxLS.jpg" style="display: none;">
+                    </div>
+                    <div class="si no-bg" data-idx="2" data-toggle="modal" data-target="#picture-modal">
+                        <img class="m1 on" title="租房，整租，合租" src="__IMG__/home/public-20180329-FrNsOKzIZWWtKJGPtGzZ0A4g8zE_.jpg" style="display: inline;">
+                        <img class="g1" title="租房，整租，合租" src="__IMG__/home/public-20180329-Fo25P0K-Ncz1pAOJZSI8nEPg3XqU.jpg" style="display: none;">
+                    </div>
+                    <div class="si no-bg" data-idx="3" data-toggle="modal" data-target="#picture-modal">
+                        <img class="m1 on" title="租房，整租，合租" src="__IMG__/home/public-20180329-FheQabPfVZyAwEHhGlC2VaWADEtc.jpg" style="display: inline;">
+                        <img class="g1" title="租房，整租，合租" src="__IMG__/home/public-20180329-FvuQexlEhZxtHW3cuNXJJJgHliC2.jpg" style="display: none;">
+                    </div>
+                </div>
+            </div>
+            <div class="sample"></div>
+            <div class="sample"></div>
+            <div class="sample"></div>
+        </div>
+
+    </div>
+</div>
+
+<div class="index-sq">
+    <div class="wibsite-center">
+        <div class="box-title">
+            <div class="box-title-fl fl J-trade-tit">
+                <h2>
+                    <span><b>精选商圈</b>为你而选</span>
+                    <p>蛋壳公寓致力于为都市白领创造高品质租住生活</p>
+                </h2>
+            </div>
+        </div>
+        <div class="index-sqbox"></div>
+    </div>
+</div>
+
+<div class="index-sq">
+    <div class="wibsite-center">
+        <div class="box-title">
+            <div class="box-title-fl fl J-story-tit">
+                <h2>
+                    <span><b>蛋壳故事</b>生活点滴</span>
+                    <p>蛋壳公寓致力于为都市白领创造高品质租住生活</p>
+                </h2>
+            </div>
+        </div>
+        <div class="storybox">
+            <a key="01" href="https://www.dankegongyu.com/zhuanti/story?storyID=8" class="storylist s-l1" target="_blank">
+                <img title="" src="__IMG__/home/public-20180622-Fmyx9cgrMLfuwkxaEIyrJLn8dPrI.jpg" alt="蛋壳故事">
+                <div class="sl-text">
+                    <label>了解更多</label>
+                    <h3><span>风雨无阻，只怕服务不到位</span>
+                    </h3>
+                    <b></b>
+                    <p>2018年4月18日晚上21点40分，北京市昌平区回龙观小区某蛋壳公寓的租客需要紧急重新签约合同。蛋壳管家张悦得知后晚上10点专门骑车从东二环赶到北五环租客所住的住所办理，终于在夜里11点半帮租客解决好这一突发状况。</p>
+                </div>
+            </a>
+            <a key="11" href="https://www.dankegongyu.com/zhuanti/story?storyID=7" class="storylist s-l2" target="_blank">
+                <img title="" src="__IMG__/home/public-20180621-FhgqRnfqSlY_sLZ9BkfcXa3OZzTp.jpg" alt="蛋壳故事">
+                <div class="sl-text">
+                    <label>了解更多</label>
+                    <h3>
+                        <span>35度的太阳也晒不退服务的心</span>
+                    </h3>
+                    <b></b>
+                    <p>距离租客家路程超过9公里的蛋壳公寓维修师傅牛飞杰，中午1点接到紧急工单后，骑车30分钟内赶到租客家。当时牛飞杰师傅到达后已是满头大汗，连租户都笑称“电瓶车都快晒焉了”。而牛飞杰却顾不得喝一口水，就投入到检查设备之中并找到解决方案，迅速及完美的解决了租户的问题。</p>
+                </div>
+            </a>
+            <a key="21" href="https://www.dankegongyu.com/zhuanti/story?storyID=6" class="storylist s-l3" target="_blank">
+                <img title="" src="__IMG__/home/public-20180621-FskSMJkCXn05iO9Gq0Q11XNNnZAK.jpg" alt="蛋壳故事">
+                <div class="sl-text"><label>了解更多</label><h3><span>将心比心，急人所急</span>
+                    </h3>
+                    <b></b>
+                    <p>蛋壳公寓维修师傅陈孝瑞接到紧急工单，在半个小时内赶到蛋壳公寓的租户家中。当时整个屋子的地面已经被携带污水淹没，几乎无处下脚。陈孝瑞经过快速检查发现了问题所在并找到解决方案，立刻投入工作，疏通地漏，最后还帮租客清洁了地面。全部处理完成时，已经是凌晨2点半</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{/block}
+
+{block name="javaScript"}
+<script type="text/javascript">
+
+</script>
+{/block}
