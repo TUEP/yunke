@@ -1,0 +1,107 @@
+{extend name="public:base" /}
+
+{block name="style"}
+<style type="text/css" rel="stylesheet">
+.listtitle .details{
+	    display: block;
+    background: #4bb4bb;
+    color: #fff;
+    text-align: center;
+        float: right;
+    width: 61px;
+    height: 22px;
+    margin: 9px 18px 0 0;
+    font-size: 12px;
+    line-height: 22px;
+    cursor: pointer;
+}
+</style>
+{/block}
+
+{block name="container"}
+
+
+
+	<div class="wrapper clearfix" style="min-height: 400px;">
+				<!-- <div class="fl roomintro">
+					<div class="hp_usbox">
+						<ul>
+							<li class="">
+								<a href="https://www.dankegongyu.com/about/aboutus.html">关于蛋壳</a>
+							</li>
+							<li class="">
+								<a href="https://www.dankegongyu.com/about/contact.html">联系蛋壳</a>
+							</li>
+							<li class="active">
+								<a href="https://www.dankegongyu.com/about/join.html">加入蛋壳</a>
+							</li>
+						</ul>
+					</div>
+				</div> -->
+				<div class="fr roomcenter">
+					<div class="hp_title">
+						<div class="hp_t_h">
+							<h1>加入蛋壳</h1>
+						</div>
+						<span class="hp_t_line"></span>
+					</div>
+					<div class="joinbox">
+						<div class="jointext">
+							应聘信息投递邮箱：
+							<a href="mailto:xiaozhao@dankegongyu.com">xiaozhao@dankegongyu.com</a><br> 投递邮件主题注明 ：投递岗位+姓名(校园毕业生、实习生：投递岗位+姓名+学校+学历+专业)。<br>
+							<b>本招聘长期有效！</b>
+						</div>
+						
+						<div class="jobcontent">
+							
+							<div class="box">
+								<!--list-->
+								<div class="boxlist">
+									<div class="listtitle">
+										<span>线下渠道 BD</span>
+										<span class="details">查看详情</span>
+									</div>
+									<div class="jobtext">
+										<span>工作地址</span>
+										<p>北京朝阳门朝阳首府商业入口212</p>
+										<span>岗位职责</span>
+										<p>1.负责北京收房房源信息采集，在租房源量、日新增量、日认证房源量；<br> 2.制定项目的季度工作计划与分阶段的工作目标；<br> 3.监控房源制度中的各类指标情况,发现问题及时与相关负责人沟通并提出解决方案；<br> 4.与物业公司或相关房产机构洽谈房源合作事宜.合理分配客户并进行维护；<br> 5.完成上级交于的其他工作。</p>
+										<span>任职资格</span>
+										<p>1.大专及以上学历；<br> 2.房产行业经验优先；<br> 3.有高度的敬业精神、职业操守及有良好的团队协作意识；<br> 4.优秀的沟通表达能力、组织协调能力。</p>
+										<span>简历投递邮箱</span>
+										<p>
+											<a href="mailto:shuaihongwei@dankegongyu.com">shuaihongwei@dankegongyu.com</a>
+										</p>
+									</div>
+								</div>
+							</div>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+{/block}
+
+{block name="javaScript"}
+<script type="text/javascript">
+var deta=1;
+$('.details').click(function(){
+	if (deta==1) {
+		deta=2;
+		$(this).text("收起");
+		$(this).parent().next().css("display","block");
+	} else{
+		deta=1;
+		$(this).text("查看详情");
+		$(this).parent().next().css("display","none");
+	}
+	
+});
+</script>
+{/block}

@@ -1,11 +1,32 @@
 <?php
 namespace app\index\controller;
 
-class Index
+use \think\Controller;
+use think\Db;
+use think\Requset;
+use app\admin\controller\Permissions;
+use app\admin\model\ArticleCate as cateModel;
+
+class Index extends Controller
 {
     public function index()
     {
+    	// return view('login');
+    	$data = Db::name('home_banner')->select();
+    	$data1= $data[0]['img'];
+    	$data2= $data[1]['img'];
+    	$data3= $data[2]['img'];
+    	$data4= $data[3]['img'];
+    	$data5= $data[4]['img'];
+    	$data6= $data[5]['img'];
+
+    	$this->assign('img1',$data1);
+    	$this->assign('img2',$data2);
+    	$this->assign('img3',$data3);
+    	$this->assign('img4',$data4);
+    	$this->assign('img5',$data5);
+    	$this->assign('img6',$data6);
+
     	return view();
-        return '<style type="text/css">*{ padding: 0; margin: 0; } div{ padding: 4px 48px;} a{color:#2E5CD5;cursor: pointer;text-decoration: none} a:hover{text-decoration:underline; } body{ background: #fff; font-family: "Century Gothic","Microsoft yahei"; color: #333;font-size:18px;} h1{ font-size: 100px; font-weight: normal; margin-bottom: 12px; } p{ line-height: 1.6em; font-size: 42px }</style><div style="padding: 24px 48px;"> <h1>:)</h1><p> Tplay<br/><span style="font-size:30px">为开发者量身定制的高速度开发后台管理框架</span></p><span style="font-size:22px;"><br>【重要】【重要】【重要】Tplay后台管理框架目前没有开发index前台模块，请严格按照安装包中的安装说明进行安装！！';
     }
 }

@@ -3,40 +3,144 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css" media="all" />
 	<style type="text/css" media="screen">
 		.box{
 			height: 180px;width: 360px;
 			border: 1px solid #9f9090;
-			margin-bottom: 5px;
+			margin-bottom: 15px;
 			margin-left: 30px;
-			box-shadow: 10px 10px 5px #807b7b;
+			box-shadow: 4px 4px 5px #807b7b;
 		}
 		.picture{
-			float: left;width: 310px;height: 100%;
+			float: left;width: 309px;height: 100%;
 		}
 		.btn_box{
 			float: left;width: 49px;height: 100%;
 			border-left: 1px solid #9f9090;
+			cursor: pointer;
 		}
 		.bt{
 			height: 50%;width: 100%;line-height: 90px;text-align: center;
 		}
+		.up-btn{display: inline-block;
+			margin-left: 1%;margin-top: 4%;
+			width: 92%;height: 95%;
+			background-color: #3ac7dc;
+			border-radius: 3px;
+		}
+		#select{
+			width: 360px;margin-bottom: 15px;margin-left: 30px;
+		}
+		#img_box{
+			width: 900px;
+			`height: 400px;
+		}
+		.img_{
+			height: 140px;width: 268px;
+			border: 1px solid #9f9090;
+			margin-bottom: 15px;
+			margin-left: 30px;
+			box-shadow: 4px 4px 5px #807b7b;float: left;
+		}
+		.banner{
+			width: 100%;height: 100%;
+		}
 	</style>
 </head>
 <body>
-	<form action="{:url('admin/Homephoto/homephoto')}" method="post" accept-charset="utf-8">
+
+	<form action="{:url('admin/Homephoto/uplode')}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+		<select name="id" id="select">
+			<option value="1">替换第1张</option>
+			<option value="2">替换第2张</option>
+			<option value="3">替换第3张</option>
+			<option value="4">替换第4张</option>
+			<option value="5">替换第5张</option>
+			<option value="6">替换第6张</option>
+		</select>
 		<div class="box">
 			<div class="picture">
-				
+				<img src="" class="preview" width="100%" height="100%" for="file_upload1.onclick()">
 			</div>
 			<div class="btn_box">
-				<div class="bt"></div>
-				<div class="bt"></div>
+				<div class="bt">
+					<label for="file_upload1" class="up-btn">
+						<span >选择</span>
+					</label>
+					<input class="file_upload hidden" hidden="hidden" name="img"  type="file"  id="file_upload1" />
+				</div>
+				<div class="bt">
+					<input type="submit" class="up-btn" value="上传">
+					<!-- <span class="up-btn u1">上传</span> -->
+				</div>
 			</div>
 		</div>
 	</form>
+
+	<div id="img_box">
+		{volist name="data" id="item"}
+		<div class="img_">
+			<img src="/uploads/home_banner/{$item.img}" class="banner" alt="第{$item.id}张">
+		</div>
+		{/volist}
+	</div>
+
+
 </body>
-<script src="/javascripts/application.js" type="text/javascript" charset="utf-8">
-	
+<script src="__PUBLIC__/jquery/jquery.min.js"></script>
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/layui/layui.js"></script>
+<script type="text/javascript" charset="utf-8">
+	$(function() {
+        $(".file_upload").change(function() {
+            var $file = $(this);
+            var fileObj = $file[0];
+            var windowURL = window.URL || window.webkitURL;
+            var dataURL;
+
+            var $img = $(this).parent().parent().prev().children();
+
+ 
+            if(fileObj && fileObj.files && fileObj.files[0]){
+                dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                $img.attr('src',dataURL);
+            }else{
+                dataURL = $file.val();
+
+                var imgObj = document.getElementByClass("preview");
+                // 两个坑:
+                // 1、在设置filter属性时，元素必须已经存在在DOM树中，动态创建的Node，也需要在设置属性前加入到DOM中，先设置属性在加入，无效；
+                // 2、src属性需要像下面的方式添加，上面的两种方式添加，无效；
+                imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+ 
+            }
+        });
+    });
+
+    function pho_up(){
+    	// $.ajax({    		 
+    	// 	url:'../csm/showuserqueue-ajax.php',    		 
+    	// 	type:'GET',    		 
+    	// 	data:'username='+ $(this).children().eq(2).text(),    		 
+    	// 	dataType:'text',    		 
+    	// 	success:function(data){    			 
+    	// 		$('#userlist_table tr').eq(i).children().eq(8).text(data);     		 
+    	// 	},    		 
+    	// 	error:function(XMLHttpRequest, textStatus, errorThrown){    			 
+    	// 		alert(XMLHttpRequest.status);                 
+    	// 		alert(XMLHttpRequest.readyState);                 
+    	// 		alert(textStatus);    		 
+    	// 	}
+    	// }); 
+    }
+
+ //    $('.u6').click(function(){
+	// 	console.log($(this).next().text());
+	// 	var url = "('admin/Homephoto/homephoto',['id'=>"+$(this).next().text()+"])";
+	// 	console.log(url);
+	// });
 </script>
 </html>
