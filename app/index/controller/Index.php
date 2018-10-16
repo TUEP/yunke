@@ -29,4 +29,9 @@ class Index extends Controller
 
     	return view();
     }
+
+    public function hotel()
+    {
+    	return view('hotel');
+    }
 }

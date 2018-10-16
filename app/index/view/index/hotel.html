@@ -3,58 +3,98 @@
 	.hotel-box {
 		width: 100%;
 		height: 650px;
+		background-image: url(https://z1.muscache.cn/pictures/41df549a-66b9-4202-bde0-31941e58c063.jpg);
+		padding-top: 550px;
 	}
 	
-	._1bkpw4e {
-		height: 100%;
-		width: 100%;
-		background-size: 100% 100%;
+	.K{
+		width: 35%;height: 60px;
+		background-color: pink;
+		/*position: absolute;*/
+		/*left: 10px;*/
+		margin: 0 auto;
+		/*margin-top: 200px;*/
 	}
-	
+	._9otl8cc{
+		font-size: 17px;
+		margin-top: 8px;
+		height: 45px;width: 80%;
+	}
 	._1ah1zmc{
-		background-color: #FF5A5F;
-		height: 96px;width: 72px;
-		box-sizing: border-box;
-		color: rgb(72, 72, 72);
-		display: table-cell;
-		font-family: Circular, "PingFang-SC", "Hiragino Sans GB", "微软雅黑", "Microsoft YaHei", "Heiti SC";
-		font-size: 19px;
-		line-height: 24px;
-		vertical-align: middle;
+		height: 45px;width: 100%;
+		/*background-color: red;*/
+		/*margin-top: 6px;*/
+	}
+	.btn-box{
+		width: 19%;
+		float: right;
+		background-color: pink;
+		margin-top: 8px;
+	}
+
+	.hotel-content{
+		width: 70%;height: auto;
+		margin:0 auto;
+		background-color: pink; 
+	}
+	
+	.hotel-con{
+		width: 31%;
+		margin: 0px 1% 10px 1%;
+		background-color: red;
+		float: left;
+	}
+	.hotel-con img{
+		width: 100%;
 	}
 	
 </style>
-{/block} {block name="container"}
+{/block} 
+
+{block name="container"}
 
 <div class="hotel-box">
-
-	<div class="_1bkpw4e" style="background-image: url(&quot;https://z1.muscache.cn/pictures/41df549a-66b9-4202-bde0-31941e58c063.jpg&quot;);"></div>
-
-</div>
-
-<div class="_1mxmmj5">
-	<div class="_puzkdo">
-		<div>
-			<div tabindex="-1" class="_1dgzrp6i">
-				<div>
-					<form class="_2930ex" action="/s/all" method="get">						
-						<div class="_178faes">
-							<input autocomplete="off" class="_9otl8cc" id="Geocomplete" name="query" placeholder="目的地，城市，地址" value="" type="text">
-						</div>			
-						<div class="_17u98ky">
-							<!--<button tabindex="0" type="submit" class="_1ah1zmc">搜索</button>-->
-							<input type="submit" class="_1ah1zmc" value="搜索" />
-						</div>
-					</form>
+	<div class="K">
+		<form class="" action="" method="get">						
+			
+				<input autocomplete="off" class="_9otl8cc" id="Geocomplete" name="query" placeholder="目的地，城市，地址" value="" type="text">
+					
+				<div class="btn-box">
+					<input type="submit" class="_1ah1zmc" value="搜索" />
 				</div>
-				<div></div>
-			</div>
-		</div>
+		</form>		
 	</div>
 </div>
+	<!-- <div class="" style="background-image: url(&quot;https://z1.muscache.cn/pictures/41df549a-66b9-4202-bde0-31941e58c063.jpg&quot;);"></div> -->
 
-{/block} {block name="javaScript"}
+<div class="hotel-content">
+	
+	<div class="hotel-con">
+		<img src="../../../../public/images/home/public-20180329-Fo7SUtrkV4mzTfp9IpygZWkrtm-L.jpg"/>
+		<div class="">
+			<div class="">
+				
+			</div>
+			元/月
+		</div>
+	</div>
+	<div class="hotel-con">
+		
+	</div>
+	<div class="hotel-con">
+		
+	</div>
+
+</div>
+
+ 
+
+{/block}
+
+{block name="javaScript"}
 <script type="text/javascript">
+	$('.hotel-con').height($('.hotel-con').width()*1.02);
+	$('.hotel-con img').height($('.hotel-con img').width()*0.75);
 	
 	
 </script>
