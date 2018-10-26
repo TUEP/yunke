@@ -3,7 +3,7 @@
 return [
 	'view_replace_str' => [
 		'__STATIC__'      =>'/static',
-		'__IMG__'         =>'images',
+		'__IMG__'         =>'/images',
 	],
 
 ];

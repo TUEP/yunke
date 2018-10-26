@@ -20,8 +20,15 @@
     <link media="all" type="text/css" rel="stylesheet" href="//s1.wutongwan.org/build/css/website/common-fea393eeab.css">
  
     <style type="text/css">
+        .background{
+
+            background-image: url(http://5b0988e595225.cdn.sohucs.com/images/20171107/0d3b0e24086745d4867bfaae51ea717a.gif);
+            background-size: 100% 100%;
+        }
         .box{
             width: 300px;height: 400px;border:1px solid red;
+            position: fixed;
+            left: 42%;top: 50px;
         }
         .reg_btn,.login_btn{
         	text-align: center;line-height: 50px;width: 50%;height: 50px;
@@ -60,6 +67,7 @@
 </head>
 
 <body>
+    <div class="background">
 
 <div class="box">
     <div class="reg_btn">
@@ -91,7 +99,7 @@
         </form>
     </div>
 </div>
-
+</div>
 
 </body>
 <script src="//s1.wutongwan.org/build/js/pc_home/jquery-8fa48925b6.min.js"></script>
@@ -115,6 +123,8 @@
 <script src="//s3.wutongwan.org/build/js/pc_home/poup-09013e9343.js"></script>
 
 <script>
+
+    $('.background').height($(window).height());
 	
 	$('.reg_btn').click(function(){
 		$(this).css("backgroundColor","orange");

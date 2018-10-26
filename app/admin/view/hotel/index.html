@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css"  media="all">
+  	<link rel="stylesheet" href="__PUBLIC__/font-awesome/css/font-awesome.min.css" media="all" />
+  	<link rel="stylesheet" href="__CSS__/admin.css"  media="all">
+  		<!-- <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css" media="all" /> -->
+  	<style rel="stylesheet">
+  		
+  	</style>
+</head>
+<body style="padding:10px;">
+	<div class="tplay-body-div">
+
+		<div class="layui-tab">
+		  <ul class="layui-tab-title">
+		    <li class="layui-this">酒店列表</li>
+		    <li ><a href="{:url('admin/Hotel/create')}" class="a_menu">新增</a></li>
+		  </ul>
+		</div>
+
+		<div style="margin-top: 20px;">
+    	</div>
+
+		<table class="layui-table">
+			<colgroup>
+				<col width="50">
+				<col width="100">
+				<col width="100">
+				<col width="">
+				<col width="">
+				<col width="150">
+	  		</colgroup>
+			<thead>
+				<tr>
+				  <th>ID</th>
+				  <th>价格 /月</th>
+				  <th>图片</th>
+				  <th>备注</th>
+				  <th>交通</th>
+				  <th>操作</th>
+				</tr> 
+	  		</thead>
+	  		<tbody>
+	  			{volist name="data" id="item"}
+	  			<tr>
+	  				<td>{$item.id}</td>
+	  				<td>{$item.price}</td>
+	  				<td><img src="/uploads/hotel/{$item.img}" alt="" style="height: 50px;width: 50px;"></td>
+	  				<td>{$item.commit}</td>
+	  				<td>{$item.traffic}</td>
+	  				<td>
+	  					<a href="{:url('admin/Hotel/edit',['id'=>$item.id])}" class="layui-btn layui-btn-sm layui-btn-primary" >修改</a>
+	  					<button class="layui-btn layui-btn-sm layui-btn-normal del_rank"> <input type="hidden" value="{$item.id}"> 删除</button>
+	  				</td>	
+	  			</tr>
+	  			{/volist}
+	  			<tr>
+          			<td colspan="8" align="center">{$data->render()}</td>
+        		</tr>
+	  		</tbody>
+		</table>
+
+	</div>
+</body>
+<script src="__PUBLIC__/jquery/jquery.min.js"></script>
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/layui/layui.js"></script>
+<script type="text/javascript" charset="utf-8">
+layui.use(['element','jquery','form','layer'], function() {
+        var element = layui.element;
+        var $ = layui.jquery;
+        var form = layui.form;
+        var layer = layui.layer;
+
+	$('.del_rank').on('click',function(){
+//            var id = $(this).last().parent().attr('data');
+            var id = $(this).children().val();
+            // console.log(id);
+            layer.open({
+                title: '提示'
+                ,content: '是否删除'
+                ,btn: ['是的', '不了']
+                ,yes:function(index){
+                    $.ajax({
+                        url:'delete',
+                        method:'post',
+                        data:{id:id},
+                        dataType:'json',
+                        success:function(res){
+                            console.log(res);
+                            if(res.code){
+                                layer.msg(res.msg);
+                                setTimeout(function(){
+                                    location="index";
+                                }, 3000);
+                            }
+                            location="index";
+                        }
+                    });
+
+                }
+                ,btn2:function(index){
+                    layer.close(index);
+                }
+            });
+    });
+ });
+</script>
+</html>

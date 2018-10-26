@@ -176,3 +176,29 @@ function upload($file_path){
     }
 
 }
+
+
+function up_photo($file,$file_path)
+{
+   if($file){
+       // $file_path=ROOT_PATH . 'public' . DS . 'uploads'.DS.'qualification'.DS.'personal';
+        $info = $file->move($file_path);
+        if($info){
+            // 成功上传后 获取上传信息
+            // 输出 20160820/42a79759f284b767dfcb2a0197904287.jpg
+            $filename=$info->getSaveName();
+            // $file_url=$file_path.DS.$filename;
+            return $filename;
+        }else{
+            // 上传失败获取错误信息
+            // echo $file->getError();
+            $filename=12;
+            return $filename;
+        }
+    }else{
+        // $res['msg']='没有上传文件';
+        // return json($res);
+        $filename=12;
+        return $filename;
+    }
+}

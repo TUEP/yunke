@@ -30,14 +30,24 @@
 	.btn-box{
 		width: 19%;
 		float: right;
-		background-color: pink;
+		/*background-color: pink;*/
 		margin-top: 8px;
 	}
 
 	.hotel-content{
 		width: 70%;height: auto;
 		margin:0 auto;
-		background-color: pink; 
+		/*background-color: pink; */
+	}
+
+	.title{
+		width: 70%;height: 110px;
+		margin:0 auto;
+		line-height: 110px;
+		border-bottom: 1px solid #a59898;
+		color: #3dbcc6;
+		font-size: 40px;
+		margin-bottom: 40px;
 	}
 	
 	.hotel-con{
@@ -74,6 +84,10 @@
 	.traffic{
 		color: #9a9a9a;
 	}
+	.paging{
+		/*height: 20px;width: 100%;*/
+		text-align: center;
+	}
 	
 </style>
 {/block} 
@@ -82,9 +96,9 @@
 
 <div class="hotel-box">
 	<div class="K">
-		<form class="" action="" method="get">						
+		<form class="" action="{:url('index/Hotel/index')}" method="get">						
 			
-				<input autocomplete="off" class="_9otl8cc" id="Geocomplete" name="query" placeholder="目的地，城市，地址" value="" type="text">
+				<input autocomplete="off" class="_9otl8cc" id="Geocomplete" name="query" placeholder="目的地，城市，地址" value="{$Think.get.query}" type="text">
 					
 				<div class="btn-box">
 					<input type="submit" class="_1ah1zmc btn btn-info" value="搜索" />
@@ -93,35 +107,32 @@
 	</div>
 </div>
 	<!-- <div class="" style="background-image: url(&quot;https://z1.muscache.cn/pictures/41df549a-66b9-4202-bde0-31941e58c063.jpg&quot;);"></div> -->
+<div class="title">
+	精选系列...
+</div>
 
 <div class="hotel-content">
 	
+	{volist name="data" id="item"}
 	<div class="hotel-con">
-		<img src="__IMG__/1111.jpg"/>
+		<img src="/uploads/hotel/{$item.img}"/>
 		<div class="price">
 			<div class="price-num">
-				￥1600
+				￥{$item.price}
 			</div>
 			元/月
 		</div>
-		<div class="commit">备注备注备注备注备注备注备注备注v备注备注</div>
-		<div class="traffic">交通交通交通交通交通交通交通交通交通交通</div>
+		<div class="commit">{$item.commit}</div>
+		<div class="traffic">{$item.traffic}</div>
 	</div>
-	<div class="hotel-con">
-		
-	</div>
-	<div class="hotel-con">
-		
-	</div>
+	{/volist}
 
 </div>
-<!-- <div style="display:inline-block;">
-			<form action="{:url('index/index')}" method="get">
-				<input type="text" name="keyword" value="$Think.get.keyword" placeholder="请输入关键字">
-				<input type="submit" value="检索">
-			</form>
-<div/> -->
 
+
+<div class="paging">
+	{$data->render()}
+</div>
  
 
 {/block}
@@ -130,7 +141,13 @@
 <script type="text/javascript">
 	$('.hotel-con').height($('.hotel-con').width()*1.02);
 	$('.hotel-con img').height($('.hotel-con img').width()*0.75);
-	
+
+	if($('.hotel-con').length%3==0){
+		$('.hotel-content').height(($('.hotel-con').height()+10)*$('.hotel-con').length/3);
+	}else{
+		console.log($('.hotel-con').height()*(Math.floor($('.hotel-con').length/3)+1));
+		$('.hotel-content').height(($('.hotel-con').height()+12)*(Math.floor($('.hotel-con').length/3)+1));
+	}
 	
 </script>
 {/block}
